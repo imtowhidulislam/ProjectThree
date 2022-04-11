@@ -23,7 +23,9 @@ const dotsContainer = document.querySelector(".dots");
 const cardTitle = document.querySelectorAll(".card_title");
 const year = document.querySelector(".year");
 const cardContainer = document.querySelector(".card__container");
-console.log(cardContainer);
+const dynamicText = document.querySelector(".web");
+console.log(web);
+
 /* TODO:: navsection ====== */
 
 // console.log(primaryNavigation.dataset.visibility);
