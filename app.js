@@ -22,7 +22,8 @@ const slide = document.querySelectorAll(".slide");
 const dotsContainer = document.querySelector(".dots");
 const cardTitle = document.querySelectorAll(".card_title");
 const year = document.querySelector(".year");
-
+const cardContainer = document.querySelector(".card__container");
+console.log(cardContainer);
 /* TODO:: navsection ====== */
 
 // console.log(primaryNavigation.dataset.visibility);
@@ -228,7 +229,6 @@ sliderFunc();
 // ! Lazy loading images ======== !!!!
 const allImages = document.querySelectorAll(".sec-2-image");
 // const allImages1 = document.querySelectorAll("img[data-src");
-console.log(allImages);
 const loadImage = (entries, observer) => {
   const [entry] = entries;
   console.log(entry);
@@ -257,7 +257,6 @@ allImages.forEach((img) => imageObserver.observe(img));
 
 /* // ! revealing the section */
 const sectionAll = document.querySelectorAll(".section");
-console.log(sectionAll);
 
 const loadSection = (entries, observer) => {
   const [entry] = entries;
@@ -296,6 +295,46 @@ cardTitle.forEach((card) => {
 /* ! Fifth Section End */
 /* Footer section Start */
 const currYear = new Date().getFullYear();
-console.log(year);
 year.textContent = currYear;
 /* Footer section End */
+
+// ? Setting card data..
+const cardData = [
+  {
+    id: 1,
+    img: "./Assets/img1.png",
+    title: "Project one",
+    link: "https://github.com/imtowhidulislam/Portfolio-websites",
+  },
+  {
+    id: 2,
+    img: "./Assets/img4.png",
+    title: "Project two",
+    link: "https://github.com/imtowhidulislam/ReactProject",
+  },
+  {
+    id: 3,
+    img: "./Assets/img3.png",
+    title: "Project three",
+    link: "https://github.com/imtowhidulislam/PortfolioWebsiteFour",
+  },
+];
+
+const setCard = () => {
+  const html = cardData
+    .map((card) => {
+      const { id, img, title, link } = card;
+      return `
+    <div class="card card_1">
+          <a href=${link} class="linkGit">
+            <i class="fab fa-github"></i>
+          </a>
+          <img src=${img} />
+          <h4 class="card_title">${title}</h4>
+    </div>
+    `;
+    })
+    .join("");
+  cardContainer.insertAdjacentHTML("beforeend", html);
+};
+setCard();
