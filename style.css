@@ -354,8 +354,14 @@ h3 {
   display: none;
 }
 .t__sec {
-  /* width: 90%; */
-  /* padding: 4rem 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.section__title {
+  width: 100%;
+  max-width: 1000px;
 }
 .section__title h2 {
   font-family: game of squids;
@@ -365,7 +371,7 @@ h3 {
 .operations__content--active {
   display: block;
   background-color: hsl(0 0% 100% / 0.2);
-  /* border: 2px solid yellow; */
+  border: 2px solid rgb(148, 148, 145);
   border-radius: 1rem;
   padding-block-start: 2rem;
   padding-block-end: 2rem;
@@ -375,7 +381,7 @@ h3 {
   max-width: 1000px;
 }
 .ope-btn {
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
   cursor: pointer;
 }
 .operations {
@@ -391,7 +397,6 @@ h3 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* border: 2px solid black; */
   top: -48px;
 }
 .operations__icon {
@@ -419,11 +424,18 @@ h3 {
   background-color: var(--color-secondary-darker);
 }
 
+.operations__tab--2 {
+  background-color: var(--color-primary);
+  /* margin: 0; */
+}
+.operations__tab--2:hover {
+  background-color: var(--color-primary-darker);
+}
+
 .operations__tab--3 {
   background-color: var(--color-tertiary);
   /* margin: 0; */
 }
-
 .operations__tab--3:hover {
   background-color: var(--color-tertiary-darker);
 }
@@ -441,7 +453,25 @@ h3 {
   color: rgb(0, 0, 0);
   font-size: clamp(0.9rem, 7vw, 1.1rem);
 }
-
+@media (max-width: 35rem) {
+  .operations__tab-container {
+    top: 50%;
+    bottom: 50%;
+    height: 100%;
+    left: 0px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .operations__tab {
+    transform: rotate(-90deg);
+    transition: transform 0.5s ease-in forwards;
+    font-size: 0.4rem;
+  }
+}
 /* todo: THIRD SECITON END */
 
 /* TODO:: FORTH SECTION START */
@@ -453,6 +483,8 @@ h3 {
 
   /* IN THE END */
   overflow: hidden;
+
+  border-radius: 0.5rem;
 }
 
 .slide {
